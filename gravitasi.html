@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Perbandingan Gravitasi Venus, Bumi, dan Mars</title>
+    <style>
+      body {
+        display: flex;
+        justify-content: center; /* Memposisikan planet di tengah */
+        align-items: flex-end;
+        height: 100vh;
+        background-color: #000;
+        color: white;
+        font-family: Arial, sans-serif;
+        margin: 0; /* Menghilangkan margin default */
+      }
+
+      .planet {
+        position: relative;
+        width: 200px; /* Memperbesar ukuran planet */
+        height: 200px; /* Memperbesar ukuran planet */
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 0 50px; /* Memberikan jarak antar planet */
+      }
+
+      .bumi {
+        background-color: blue;
+      }
+
+      .mars {
+        background-color: red;
+      }
+
+      .venus {
+        background-color: orange; /* Warna untuk Venus */
+      }
+
+      .benda {
+        position: absolute;
+        width: 30px; /* Memperbesar ukuran benda */
+        height: 30px; /* Memperbesar ukuran benda */
+        background-color: yellow;
+        border-radius: 50%;
+        animation: jatuh 2s linear infinite;
+      }
+
+      @keyframes jatuh {
+        0% {
+          top: -100px; /* Jarak jatuh lebih tinggi */
+        }
+        100% {
+          top: 170px; /* Sesuaikan dengan tinggi planet */
+        }
+      }
+
+      .mars .benda {
+        animation-duration: 1.5s; /* Percepatan gravitasi Mars lebih kecil */
+      }
+
+      .venus .benda {
+        animation-duration: 1.2s; /* Percepatan gravitasi Venus lebih besar */
+      }
+    </style>
+  </head>
+  <body>
+    <div class="planet venus">
+      Venus
+      <div class="benda"></div>
+    </div>
+
+    <div class="planet bumi">
+      Bumi
+      <div class="benda"></div>
+    </div>
+
+    <div class="planet mars">
+      Mars
+      <div class="benda"></div>
+    </div>
+  </body>
+</html>
